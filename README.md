@@ -16,7 +16,7 @@
 
 **GitHub Repository:** [View Source Code](https://github.com/Shivangiagarwal-sst/roundwise_ai_interview_prep)
 
-**Demo Video:** *Add your demo video link here.*
+**Demo Video:** [Watch the Roundwise Demo](https://drive.google.com/file/d/10ZZwVsKhAsXQzZdStINqbP0_n-dMEdP3/view?usp=drivesdk)
 
 ---
 
@@ -26,7 +26,7 @@ Preparing for coding interviews can be challenging because students often need t
 
 Students need a structured way to discover relevant interview questions, organize their preparation, identify weaknesses, and track their progress without managing everything separately.
 
-Roundwise AI Interview Prep aims to bring these activities together in one platform.
+Roundwise AI Interview Prep brings these activities together in one platform.
 
 ## 🎯 Target Users
 
@@ -46,31 +46,31 @@ Users can discover questions, organize their preparation, practice problems on l
 
 ### 1. 🏢 Company-Wise Question Directory
 
-- Explore a directory of **659 companies**.
+- Explore a directory of 659 companies.
 - View company-wise coding question counts.
 - Search and filter companies.
-- Sort the directory by supported criteria, such as name and recency.
+- Sort the directory using supported criteria.
 - Discover coding problems relevant to technical interviews.
 
 ### 2. 📚 Coding Question Bank
 
 - Browse coding interview questions associated with companies.
-- Find relevant problems through available search and filtering options.
+- Find relevant problems using available search and filtering options.
 - Open linked coding problems on external platforms.
-- Use the question bank to support structured interview preparation.
+- Use the question bank to organize interview preparation.
 
 ### 3. 📅 Personalized Study Plan Generator
 
 - Generate a study plan based on your preparation requirements.
-- Organize coding practice into a more structured workflow.
-- Review the generated plan.
+- Organize coding practice into a structured workflow.
+- Review and organize the generated plan.
 - Use planned questions to guide your preparation.
 
 ### 4. 🤖 AI-Powered Code Analysis
 
 Submit a coding solution for AI-assisted feedback.
 
-Depending on the solution and the AI response, the analysis can cover:
+Depending on the submitted code and AI response, the analysis can cover:
 
 - Approach and logic explanation.
 - Time and space complexity.
@@ -78,7 +78,7 @@ Depending on the solution and the AI response, the analysis can cover:
 - Edge cases.
 - Suggestions for improvement.
 
-AI-generated feedback is advisory. Always test your code and verify the analysis independently.
+AI-generated feedback is advisory. Always test your code and independently verify the analysis.
 
 ### 5. 📈 Progress Tracking
 
@@ -94,12 +94,12 @@ AI-generated feedback is advisory. Always test your code and verify the analysis
 - Revisit previously practiced problems.
 - Maintain a consistent revision routine.
 
-### 7. 🔐 Authentication and Demo Mode
+### 7. 🔐 Authentication
 
 - Register an account.
 - Log in to access protected features.
 - Use authenticated application workflows.
-- Explore the available Demo Mode, if enabled in the deployment.
+- Access features according to the application's authentication and authorization rules.
 
 ---
 
@@ -107,19 +107,19 @@ AI-generated feedback is advisory. Always test your code and verify the analysis
 
 | Technology | Purpose |
 |---|---|
-| React | Building the user interface |
+| React | Frontend user interface |
 | Vite | Frontend development and production builds |
-| CSS / configured styling tools | Styling and responsive layouts |
+| CSS and configured styling tools | Styling and layouts |
 | Node.js | Backend JavaScript runtime |
-| Express.js | REST API and backend routing |
+| Express.js | Backend routing and REST APIs |
 | MongoDB | Persistent application data |
-| Mongoose, if configured | MongoDB object modeling |
+| Mongoose | MongoDB object modeling, if used |
 | Google Gemini API | AI-assisted code analysis |
 | Git | Version control |
 | GitHub | Source code hosting |
-| Render | Backend or application hosting, as configured |
+| Render | Application hosting |
 
-*The table describes the intended stack; retain only technologies used by the final implementation.*
+*The table lists the project's intended technologies. Ensure it matches the final implementation.*
 
 ---
 
@@ -142,7 +142,6 @@ flowchart TD
     B --> DB[(MongoDB Database)]
     B --> AI[Google Gemini API]
     U --> CP[External Coding Platforms]
-    CP --> F
 ```
 
 ### Project Structure
@@ -159,7 +158,8 @@ roundwise_ai_interview_prep/
 │   └── Project documentation
 ├── server/
 │   ├── data/
-│   │   └── companies/
+│   │   ├── companies/
+│   │   └── ATTRIBUTION.md
 │   ├── tests/
 │   └── Backend application
 ├── package.json
@@ -176,8 +176,6 @@ roundwise_ai_interview_prep/
 
 ### Prerequisites
 
-Install:
-
 - Git
 - Node.js version compatible with `.nvmrc`
 - npm
@@ -193,22 +191,23 @@ cd roundwise_ai_interview_prep
 
 ### 2. Install Dependencies
 
-Install the root dependencies:
+Install root dependencies if the root `package.json` configures them:
 
 ```bash
 npm install
 ```
 
-If the frontend and backend have independent dependency configurations, install those dependencies as required:
+If the frontend and backend have separate dependency configurations, install their dependencies as needed:
 
 ```bash
 cd client
 npm install
+
 cd ../server
 npm install
 ```
 
-Follow the scripts and workspace configuration in the repository's `package.json` files.
+Follow the scripts and workspace configuration in the relevant `package.json` files.
 
 ### 3. Configure Environment Variables
 
@@ -216,7 +215,7 @@ Create local environment files using the variable names expected by the applicat
 
 **Backend — `server/.env`**
 
-Example placeholders:
+Example only; adjust these names and values to match the backend source code:
 
 ```env
 PORT=5000
@@ -229,15 +228,20 @@ NODE_ENV=development
 
 **Frontend — `client/.env`**
 
-Example placeholder:
+Example only; use the actual frontend API variable defined in your code:
 
 ```env
-VITE_API_URL=http://localhost:5173
+VITE_API_URL=http://localhost:5000
 ```
 
-These values are examples, not guaranteed names or defaults. Check the actual backend configuration and frontend API service before using them. The frontend API URL may need to include the backend's local port and API prefix.
+The frontend API URL must point to the backend's actual local address and, where required, its API prefix. The environment variable names above are examples, not guaranteed defaults.
 
-Never put real credentials in the README or commit real `.env` files.
+**Security reminders:**
+
+- Never put real credentials in this README.
+- Do not commit real `.env` files.
+- Keep private API keys on the backend.
+- Configure production environment variables through your hosting provider.
 
 ### 4. Run the Application
 
@@ -265,9 +269,9 @@ Open the local URL printed by the frontend development server.
 
 ### MongoDB
 
-MongoDB is used for persistent application data. Configure the connection string through the backend environment variables.
+MongoDB provides persistent storage for application data. Configure the database connection through the backend environment variables.
 
-The company question dataset is included under the server data directory in the repository structure. Its exact loading behavior depends on the implementation.
+The company question dataset is included in the server's data directory. Its exact loading and persistence behavior depends on the implementation.
 
 ### Google Gemini API
 
@@ -280,7 +284,7 @@ To configure it:
 3. Use the variable name expected by the source code.
 4. Restart the backend and test the analysis workflow.
 
-AI functionality can be affected by invalid credentials, quota limits, rate limits, service outages, or model availability.
+AI functionality may be affected by invalid credentials, quota limits, rate limits, service outages, or model availability.
 
 ---
 
@@ -302,24 +306,24 @@ cd client
 npm run build
 ```
 
-Verify the actual scripts before running these commands. Test results should be reported only after the commands have completed successfully.
+Verify the actual scripts before running these commands. Report test results only after the commands have completed successfully.
 
-Recommended manual verification:
+### Manual Verification Checklist
 
-- User registration and login.
-- Company directory and question browsing.
-- Search and filtering.
-- Study plan generation.
-- AI code analysis.
-- Question status updates and progress tracking.
-- Revision queue.
-- Logout and protected-route behavior.
+- [ ] User registration and login.
+- [ ] Company directory and question browsing.
+- [ ] Search and filtering.
+- [ ] Study plan generation.
+- [ ] AI code analysis.
+- [ ] Question status updates and progress tracking.
+- [ ] Revision queue.
+- [ ] Logout and protected-route behavior.
 
 ---
 
 ## 🚀 Deployment
 
-The deployed application uses the hosting configuration available in the repository.
+The application is deployed using the hosting configuration available in the repository.
 
 ### Deployment Checklist
 
@@ -336,9 +340,9 @@ The deployed application uses the hosting configuration available in the reposit
 
 - **Application:** [Roundwise AI Interview Prep](https://roundwise-ai-interview-prep.onrender.com)
 - **Repository:** [GitHub Source Code](https://github.com/Shivangiagarwal-sst/roundwise_ai_interview_prep)
-- **Demo Video:** *Add your video link here.*
+- **Demo Video:** [Watch the project demonstration](https://drive.google.com/file/d/10ZZwVsKhAsXQzZdStINqbP0_n-dMEdP3/view?usp=drivesdk)
 
-The live URL should be checked to confirm that it opens the frontend application and that the required workflows function correctly.
+*Ensure the application and video links are accessible to evaluators before submission.*
 
 ---
 
@@ -389,7 +393,9 @@ Potential enhancements include:
 
 ## 📄 License
 
-See the [`LICENSE`](./LICENSE) file in this repository for licensing details.
+See the [`LICENSE`](./LICENSE) file for the licensing terms applicable to the original Roundwise source code.
+
+The company question dataset may be subject to separate licensing terms. See [`server/data/ATTRIBUTION.md`](./server/data/ATTRIBUTION.md) for attribution information.
 
 ---
 
