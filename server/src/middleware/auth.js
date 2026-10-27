@@ -58,7 +58,14 @@ export function verifyOrigin(req, res, next) {
   }
 
   const allowedOrigins = getAllowedOrigins();
-  if (!allowedOrigins.includes(origin) && !allowedOrigins.includes('*')) {
+  if (
+    !allowedOrigins.includes(origin) &&
+    !allowedOrigins.includes('*') &&
+    !/\.vercel\.app$/.test(origin) &&
+    !/\.onrender\.com$/.test(origin) &&
+    !/^https?:\/\/localhost(:\d+)?$/.test(origin) &&
+    !/^https?:\/\/127\.0\.0\.1(:\d+)?$/.test(origin)
+  ) {
     return next(createError(403, 'Origin not allowed', 'ORIGIN_FORBIDDEN'));
   }
 

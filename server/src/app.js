@@ -68,7 +68,14 @@ export function createApp() {
         // Allow requests with no origin (curl, server-to-server)
         if (!origin) return callback(null, true);
         const normalized = origin.replace(/\/$/, '');
-        if (allowedOrigins.includes(normalized) || allowedOrigins.includes('*')) {
+        if (
+          allowedOrigins.includes(normalized) ||
+          allowedOrigins.includes('*') ||
+          /\.vercel\.app$/.test(normalized) ||
+          /\.onrender\.com$/.test(normalized) ||
+          /^https?:\/\/localhost(:\d+)?$/.test(normalized) ||
+          /^https?:\/\/127\.0\.0\.1(:\d+)?$/.test(normalized)
+        ) {
           return callback(null, true);
         }
         callback(new Error(`CORS: Origin ${origin} not allowed`));
