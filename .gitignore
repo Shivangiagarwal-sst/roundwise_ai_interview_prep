@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+build/
+client/dist/
+client/build/
+
+# Environment files (keep .env.example)
+.env
+.env.local
+.env.production
+.env.staging
+server/.env
+client/.env
+!**/.env.example
+!**/env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pino.log
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Playwright
+test-results/
+playwright-report/
+
+# Import summary (generated, not source)
+server/data/import-summary.json
+
+# IMPORTANT: server/data/companies/ must NOT be ignored
+# It contains the vendored dataset needed at runtime

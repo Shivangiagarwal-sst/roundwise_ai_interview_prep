@@ -1,0 +1,25 @@
+{
+  "name": "roundwise",
+  "version": "1.0.0",
+  "description": "Know what they ask before you walk in — a free interview-prep workspace built on real company-wise question data.",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "install:all": "npm install && npm install --prefix client && npm install --prefix server",
+    "dev": "concurrently -n server,client -c cyan,magenta \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "build": "npm run build --prefix client",
+    "start": "npm run start --prefix server",
+    "test": "npm run test --prefix server && npm run test --prefix client",
+    "lint": "npm run lint --prefix client && npm run lint --prefix server",
+    "import:data": "npm run import:data --prefix server",
+    "verify:data": "npm run verify:data --prefix server",
+    "seed:demo": "npm run seed:demo --prefix server",
+    "check:ai": "npm run check:ai --prefix server",
+    "screenshots": "npm run screenshots --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
