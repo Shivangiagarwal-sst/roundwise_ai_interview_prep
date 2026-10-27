@@ -16,8 +16,7 @@
     "import:data": "npm run import:data --prefix server",
     "verify:data": "npm run verify:data --prefix server",
     "seed:demo": "npm run seed:demo --prefix server",
-    "check:ai": "npm run check:ai --prefix server",
-    "screenshots": "npm run screenshots --prefix client"
+    "check:ai": "npm run check:ai --prefix server"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
