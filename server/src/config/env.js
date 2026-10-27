@@ -31,7 +31,9 @@ if (typeof process.loadEnvFile === 'function') {
 }
 
 const envSchema = z.object({
-  NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
+  NODE_ENV: z.enum(['development', 'production', 'test']).default(
+    process.env.RENDER ? 'production' : 'development'
+  ),
   PORT: z.coerce.number().int().positive().default(5000),
   MONGODB_URI: z.string().min(1, 'MONGODB_URI is required').default(
     process.env.NODE_ENV === 'test' ? 'mongodb://localhost:27017/roundwise_test' : undefined
@@ -39,7 +41,7 @@ const envSchema = z.object({
   JWT_SECRET: z.string().min(32, 'JWT_SECRET must be at least 32 characters').default(
     process.env.NODE_ENV === 'test' ? 'test-jwt-secret-minimum-32-chars-long-for-security' : undefined
   ),
-  CLIENT_URL: z.string().default('http://localhost:5173'),
+  CLIENT_URL: z.string().default(process.env.RENDER_EXTERNAL_URL || 'http://localhost:5173'),
   GEMINI_API_KEY: z
     .string()
     .transform((val) => val.trim().replace(/^["']|["']$/g, '').trim())

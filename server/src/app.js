@@ -142,14 +142,23 @@ export function createApp() {
   app.use('/api/ai', aiRoutes);
   app.use('/api/public', publicRoutes);
 
-  // Serve static client in production
-  if (isProd) {
-    const clientDist = path.resolve(__dirname, '../../client/dist');
+  // Serve static client whenever build exists
+  const candidateDistPaths = [
+    path.resolve(__dirname, '../../client/dist'),
+    path.resolve(process.cwd(), 'client/dist'),
+    path.resolve(process.cwd(), '../client/dist'),
+  ];
+  const clientDist = candidateDistPaths.find((p) => fs.existsSync(path.join(p, 'index.html')));
+
+  if (clientDist) {
+    logger.info(`Serving static client from: ${clientDist}`);
     app.use(express.static(clientDist));
     app.get('*', (req, res, next) => {
       if (req.path.startsWith('/api')) return next();
       res.sendFile(path.join(clientDist, 'index.html'));
     });
+  } else {
+    logger.warn('Client build not found. Only API routes will be available.');
   }
 
   // 404 and error handling (must be last)
