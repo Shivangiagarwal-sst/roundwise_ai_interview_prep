@@ -1,110 +1,125 @@
 # Roundwise AI Interview Prep 🚀
 
-**An AI-powered coding interview preparation platform with company-wise DSA questions, personalized revision scheduling, progress analytics, and AI-driven code analysis.**
+**An AI-powered coding interview preparation platform with company-wise DSA questions, personalized study plans, progress tracking, revision scheduling, and AI-driven code analysis.**
 
-<p align="center">
-  <strong>Prepare smarter. Practice consistently. Track your progress.</strong>
-</p>
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/Shivangiagarwal-sst/roundwise_ai_interview_prep)
+
+**Prepare smarter. Practice consistently. Track your progress.**
 
 ---
-
 
 ## 🌐 Website Preview
 
 [![Roundwise AI Interview Prep](./Roundwise.png)](https://roundwise-ai-interview-prep.onrender.com)
 
+**Live Application:** [Open Roundwise AI Interview Prep](https://roundwise-ai-interview-prep.onrender.com)
 
-## 🌐 Live Demo
-- **Demo Video:** [Add your demo video link]
+**GitHub Repository:** [View Source Code](https://github.com/Shivangiagarwal-sst/roundwise_ai_interview_prep)
+
+**Demo Video:** *Add your demo video link here.*
 
 ---
 
-## 📌 Overview
+## 📌 Problem Statement
 
-Roundwise AI Interview Prep is a coding interview preparation platform designed to help students and aspiring software engineers prepare for technical interviews in a structured and personalized way.
+Preparing for coding interviews can be challenging because students often need to switch between company-wise question lists, coding platforms, study schedules, revision trackers, and code-analysis tools.
 
-Preparing for coding interviews often involves switching between company-wise question lists, coding platforms, revision schedules, and code analysis tools. Roundwise brings these activities together in one platform.
+Students need a structured way to discover relevant interview questions, organize their preparation, identify weaknesses, and track their progress without managing everything separately.
 
-Users can explore company-specific coding questions, generate personalized study plans, practice problems, analyze their code using AI, track their solving progress, and manage upcoming revisions.
+Roundwise AI Interview Prep aims to bring these activities together in one platform.
 
-The platform combines structured interview preparation with AI-assisted feedback to make practice more organized, efficient, and consistent.
+## 🎯 Target Users
+
+- Students preparing for software engineering interviews.
+- Beginners learning Data Structures and Algorithms.
+- Candidates preparing for company-specific coding rounds.
+- Developers who want to organize coding practice and revision.
+- Learners who want AI-assisted feedback on their solutions.
+
+## 💡 Solution
+
+Roundwise AI Interview Prep combines a company-wise coding question directory, personalized study planning, AI-powered code analysis, progress tracking, and a revision queue.
+
+Users can discover questions, organize their preparation, practice problems on linked platforms, submit solutions for AI feedback, and revisit questions as part of their revision workflow.
 
 ## ✨ Key Features
 
 ### 1. 🏢 Company-Wise Question Directory
 
-- Browse a directory of **659 companies**.
-- Explore coding interview questions associated with different companies.
-- View company-wise question counts.
-- Search and filter the company directory.
-- Sort companies by name and recency, where supported.
-- Discover coding problems relevant to interview preparation.
+- Explore a directory of **659 companies**.
+- View company-wise coding question counts.
+- Search and filter companies.
+- Sort the directory by supported criteria, such as name and recency.
+- Discover coding problems relevant to technical interviews.
 
-### 2. 📅 Personalized Study Plan Generator
+### 2. 📚 Coding Question Bank
+
+- Browse coding interview questions associated with companies.
+- Find relevant problems through available search and filtering options.
+- Open linked coding problems on external platforms.
+- Use the question bank to support structured interview preparation.
+
+### 3. 📅 Personalized Study Plan Generator
 
 - Generate a study plan based on your preparation requirements.
-- Organize coding practice into a structured workflow.
-- Follow planned questions instead of choosing problems randomly.
-- Use the generated plan to guide your interview preparation.
+- Organize coding practice into a more structured workflow.
+- Review the generated plan.
+- Use planned questions to guide your preparation.
 
-### 3. 🤖 AI-Powered Code Analysis
+### 4. 🤖 AI-Powered Code Analysis
 
-Analyze your coding solutions using AI to receive structured feedback, including supported analysis such as:
+Submit a coding solution for AI-assisted feedback.
+
+Depending on the solution and the AI response, the analysis can cover:
 
 - Approach and logic explanation.
-- Time and space complexity analysis.
-- Identification of potential mistakes.
-- Edge-case considerations.
-- Suggestions for improving the solution.
+- Time and space complexity.
+- Potential mistakes or logical issues.
+- Edge cases.
+- Suggestions for improvement.
 
-The analysis depends on the submitted code and the AI service's response. AI-generated feedback should be reviewed and tested rather than treated as guaranteed correct.
-
-### 4. 🔗 Coding Problem Practice
-
-- Open coding problems on their linked problem-solving platforms.
-- Work on a problem and return to Roundwise to analyze your solution.
-- Connect problem practice with your study plan and progress tracking.
+AI-generated feedback is advisory. Always test your code and verify the analysis independently.
 
 ### 5. 📈 Progress Tracking
 
 - Update the status of coding questions.
-- Track your preparation progress.
-- Keep your study activity organized.
-- Review your progress as you work through interview questions.
+- Track your practice progress.
+- Keep your preparation organized.
+- Review completed and pending questions using the available tracking features.
 
 ### 6. 🔄 Revision Queue
 
-- View questions that are due for review.
-- See upcoming revisions.
+- Identify questions due for review.
+- View upcoming revisions.
 - Revisit previously practiced problems.
-- Build a more consistent revision routine.
+- Maintain a consistent revision routine.
 
-### 7. 🔐 Authentication
+### 7. 🔐 Authentication and Demo Mode
 
-- Register a user account.
-- Log in and access the application.
-- Use authenticated features according to the application's access controls.
-- Try the application through Demo Mode, if available.
+- Register an account.
+- Log in to access protected features.
+- Use authenticated application workflows.
+- Explore the available Demo Mode, if enabled in the deployment.
 
 ---
 
 ## 🛠️ Tech Stack
 
-The project uses the following technologies. Check the final implementation and remove anything that is not actually used.
-
-| Layer | Technology |
+| Technology | Purpose |
 |---|---|
-| Frontend | React |
-| Frontend build tool | Vite |
-| Styling | CSS / project styling framework |
-| Backend | Node.js |
-| API framework | Express.js |
-| Database | MongoDB |
-| Database integration | Mongoose, if used |
-| AI integration | Google Gemini API |
-| Authentication | As implemented in the project |
-| Deployment | Render and/or the configured hosting provider |
-| Version control | Git and GitHub |
+| React | Building the user interface |
+| Vite | Frontend development and production builds |
+| CSS / configured styling tools | Styling and responsive layouts |
+| Node.js | Backend JavaScript runtime |
+| Express.js | REST API and backend routing |
+| MongoDB | Persistent application data |
+| Mongoose, if configured | MongoDB object modeling |
+| Google Gemini API | AI-assisted code analysis |
+| Git | Version control |
+| GitHub | Source code hosting |
+| Render | Backend or application hosting, as configured |
+
+*The table describes the intended stack; retain only technologies used by the final implementation.*
 
 ---
 
@@ -112,38 +127,28 @@ The project uses the following technologies. Check the final implementation and 
 
 Roundwise follows a client-server architecture.
 
-1. **Frontend:** Provides the user interface for company discovery, study planning, coding practice, and progress tracking.
-2. **Backend:** Handles API requests, application logic, authentication, database operations, and AI analysis.
-3. **Database:** Stores persistent application data using MongoDB.
-4. **AI Service:** Processes code-analysis requests through the configured Gemini API integration.
-5. **External Coding Platforms:** Allow users to open and solve linked interview problems.
+1. **Frontend:** Provides the interface for company discovery, question browsing, study planning, code analysis, and progress tracking.
+2. **Backend:** Handles API requests, application logic, authentication, database operations, and AI integration.
+3. **MongoDB:** Stores persistent application data.
+4. **Google Gemini API:** Supports AI-powered code analysis through the backend.
+5. **External coding platforms:** Provide linked problems for hands-on practice.
 
-### High-Level Flow
+### Architecture Diagram
 
-```text
-User
-  |
-  v
-React + Vite Frontend
-  |
-  v
-Node.js + Express Backend
-  |
-  +------> MongoDB Database
-  |
-  +------> Google Gemini API
-  |
-  +------> External Coding Platforms
+```mermaid
+flowchart TD
+    U[User] --> F[React + Vite Frontend]
+    F --> B[Node.js + Express Backend]
+    B --> DB[(MongoDB Database)]
+    B --> AI[Google Gemini API]
+    U --> CP[External Coding Platforms]
+    CP --> F
 ```
 
----
-
-## 📂 Project Structure
-
-The repository is organized into frontend, backend, documentation, and configuration files.
+### Project Structure
 
 ```text
-roundwise-ai-interview-prep/
+roundwise_ai_interview_prep/
 ├── .github/
 ├── .gitignore
 ├── .nvmrc
@@ -163,98 +168,96 @@ roundwise-ai-interview-prep/
 └── README.md
 ```
 
-*Note: This is a high-level structure. Add the exact internal folders and files from your final repository if you want to document them in detail.*
+*This is a high-level overview. Refer to the repository for the complete source tree.*
 
 ---
 
-## ⚙️ Getting Started
-
-Follow these steps to run the project locally.
+## ⚙️ Local Setup
 
 ### Prerequisites
 
-Install the following before starting:
+Install:
 
-- Node.js — use a version compatible with the project's `.nvmrc`.
-- npm.
-- MongoDB Atlas account or another configured MongoDB instance.
-- Google Gemini API key for AI analysis.
-- Git.
+- Git
+- Node.js version compatible with `.nvmrc`
+- npm
+- A MongoDB Atlas account or another configured MongoDB instance
+- A Google Gemini API key for AI functionality
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/roundwise-ai-interview-prep.git
-cd roundwise-ai-interview-prep
+git clone https://github.com/Shivangiagarwal-sst/roundwise_ai_interview_prep.git
+cd roundwise_ai_interview_prep
 ```
-
-Replace `YOUR_USERNAME` with your GitHub username.
 
 ### 2. Install Dependencies
 
-Inspect the root `package.json` first to confirm whether it installs dependencies for both applications.
+Install the root dependencies:
 
 ```bash
 npm install
 ```
 
-If the client and server have separate `package.json` files and dependencies are not installed by the root command, install them separately:
+If the frontend and backend have independent dependency configurations, install those dependencies as required:
 
 ```bash
 cd client
 npm install
-
 cd ../server
 npm install
 ```
 
+Follow the scripts and workspace configuration in the repository's `package.json` files.
+
 ### 3. Configure Environment Variables
 
-Create the required environment files for the frontend and backend.
+Create local environment files using the variable names expected by the application.
 
 **Backend — `server/.env`**
+
+Example placeholders:
 
 ```env
 PORT=5000
 MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
 GEMINI_API_KEY=your_gemini_api_key
+CLIENT_URL=http://localhost:5173
+NODE_ENV=development
 ```
 
 **Frontend — `client/.env`**
 
+Example placeholder:
+
 ```env
-VITE_API_BASE_URL=http://localhost:5000
+VITE_API_URL=http://localhost:5173
 ```
 
-These names are examples. Use the exact variable names referenced by your final source code. If your application uses a different API URL variable or a different server port, configure those instead.
+These values are examples, not guaranteed names or defaults. Check the actual backend configuration and frontend API service before using them. The frontend API URL may need to include the backend's local port and API prefix.
 
-**Security notes:**
-- Never commit `.env` files or API keys to GitHub.
-- Keep `.env.example` files updated with placeholder values only.
-- Configure production environment variables through your hosting provider's environment settings.
-- Do not expose private backend API keys in frontend variables.
+Never put real credentials in the README or commit real `.env` files.
 
-### 4. Start the Application
+### 4. Run the Application
 
-Run the frontend and backend using the scripts defined in your `package.json` files.
-
-For example, if the backend has a `dev` script:
+Start the backend in one terminal using the script configured in `server/package.json`. For example:
 
 ```bash
 cd server
 npm run dev
 ```
 
-In a separate terminal, if the frontend has a `dev` script:
+Start the frontend in another terminal using the script configured in `client/package.json`. For example:
 
 ```bash
 cd client
 npm run dev
 ```
 
-Open the local frontend URL printed by Vite in your terminal, commonly `http://localhost:5173`.
+Open the local URL printed by the frontend development server.
 
-*Use the actual scripts defined in your project. Do not assume that `npm run dev` is available unless it exists in the relevant `package.json`.*
+*Use the actual scripts available in your repository if they differ from these examples.*
 
 ---
 
@@ -262,98 +265,116 @@ Open the local frontend URL printed by Vite in your terminal, commonly `http://l
 
 ### MongoDB
 
-MongoDB is used for persistent application data. Configure the database connection through the backend environment variables.
+MongoDB is used for persistent application data. Configure the connection string through the backend environment variables.
 
-The company question dataset is included in the repository under the configured server data directory, if that is how the final implementation loads it.
-
-This means the application can retain its bundled company dataset independently of the continued availability of an external source repository. User-generated data and other records remain subject to the application's database configuration.
+The company question dataset is included under the server data directory in the repository structure. Its exact loading behavior depends on the implementation.
 
 ### Google Gemini API
 
-The AI analysis feature connects to the configured Gemini API through the backend.
+The AI analysis feature uses the configured Gemini API integration through the backend.
 
-To enable this feature:
+To configure it:
 
 1. Obtain an API key from Google AI Studio.
-2. Add it to the backend environment using the variable name expected by the code.
-3. Restart the backend.
-4. Test code analysis with a sample solution.
+2. Store the key in the backend environment.
+3. Use the variable name expected by the source code.
+4. Restart the backend and test the analysis workflow.
 
-AI availability may depend on valid credentials, service availability, rate limits, quota, and the selected model.
+AI functionality can be affected by invalid credentials, quota limits, rate limits, service outages, or model availability.
 
 ---
 
 ## 🧪 Testing
 
-The project includes a test directory for automated tests.
+The repository contains a server test directory.
 
-To run tests, use the command supported by the relevant `package.json`. For example:
+Run the test command configured in the relevant `package.json`. For example:
 
 ```bash
+cd server
 npm test
 ```
 
-If tests are configured separately for the backend, run the test command from the server directory.
+Build the frontend using its configured build script. For example:
 
-Before submitting the project, verify that the available tests pass and that the deployed application supports its core workflows.
+```bash
+cd client
+npm run build
+```
+
+Verify the actual scripts before running these commands. Test results should be reported only after the commands have completed successfully.
+
+Recommended manual verification:
+
+- User registration and login.
+- Company directory and question browsing.
+- Search and filtering.
+- Study plan generation.
+- AI code analysis.
+- Question status updates and progress tracking.
+- Revision queue.
+- Logout and protected-route behavior.
 
 ---
 
 ## 🚀 Deployment
 
-The application can be deployed using the hosting configuration supported by the repository.
+The deployed application uses the hosting configuration available in the repository.
 
-General deployment checklist:
+### Deployment Checklist
 
-1. Push the complete project to GitHub.
-2. Configure the frontend and backend services.
-3. Add the required environment variables to the appropriate services.
-4. Configure the production frontend to call the deployed backend.
-5. Verify the MongoDB connection and database permissions.
-6. Verify that the Gemini API key is configured on the backend.
-7. Test registration, login, company browsing, study-plan generation, AI analysis, progress updates, and revision features.
-8. Add the working frontend, backend, and demo-video URLs above.
+1. Push the complete source code to GitHub.
+2. Configure the backend hosting service.
+3. Configure the frontend hosting service, if deployed separately.
+4. Set the required environment variables.
+5. Connect the backend to MongoDB.
+6. Configure the frontend to use the deployed backend URL.
+7. Configure production CORS and authentication settings where required.
+8. Test the deployed application's core workflows.
 
-Do not publish a deployment URL as working until it has been tested.
+### Live Links
+
+- **Application:** [Roundwise AI Interview Prep](https://roundwise-ai-interview-prep.onrender.com)
+- **Repository:** [GitHub Source Code](https://github.com/Shivangiagarwal-sst/roundwise_ai_interview_prep)
+- **Demo Video:** *Add your video link here.*
+
+The live URL should be checked to confirm that it opens the frontend application and that the required workflows function correctly.
 
 ---
 
 ## 🔒 Security Considerations
 
-- Environment files and API keys should not be committed.
-- Backend routes should enforce the appropriate authentication and authorization checks.
-- User input should be validated on the backend.
-- AI responses should be handled safely and errors should be managed gracefully.
-- Database credentials should be kept private.
-- Production CORS settings should allow only the intended frontend origins where appropriate.
+- Keep environment files and API keys out of version control.
+- Store Gemini and database credentials on the backend.
+- Validate user input on the server.
+- Protect private routes with the authentication mechanism implemented in the application.
+- Handle database errors and AI service failures gracefully.
+- Configure CORS for the intended production frontend.
+- Never expose database credentials or private API secrets in frontend code.
 
 ---
 
-## 🎯 Project Goals
+## ⚠️ Limitations
 
-Roundwise aims to make coding interview preparation more organized by combining:
-
-- Company-specific interview questions.
-- Structured study planning.
-- AI-assisted code feedback.
-- Progress tracking.
-- Revision management.
-
-The goal is to help learners practice consistently, identify weaknesses, and make better use of their interview preparation time.
+- AI feedback may occasionally be inaccurate or incomplete.
+- AI functionality depends on external API availability and usage limits.
+- The accuracy and coverage of company-wise questions depend on the underlying dataset.
+- Hosting free-tier limits may cause cold starts or slower initial requests.
+- External coding platforms remain subject to their own availability and policies.
 
 ---
 
 ## 🔮 Future Improvements
 
-Potential future enhancements include:
+Potential enhancements include:
 
-- More advanced adaptive study plans.
-- Additional question filters and difficulty-based recommendations.
-- Improved revision scheduling based on solving history.
-- More detailed performance analytics.
-- Additional AI feedback and code-quality checks.
-- Support for more programming languages and coding platforms.
-- Expanded test coverage and improved observability.
+- More adaptive study plans.
+- Expanded question filters and recommendations.
+- Improved revision scheduling.
+- More detailed progress analytics.
+- Additional code-quality and edge-case checks.
+- Broader programming-language support.
+- Expanded automated testing and monitoring.
 
 ---
 
@@ -361,13 +382,14 @@ Potential future enhancements include:
 
 **Shivangi Agarwal**
 
-GitHub: [Your GitHub Profile](https://github.com/YOUR_USERNAME)
+- GitHub: [Shivangiagarwal-sst](https://github.com/Shivangiagarwal-sst)
+- Project Repository: [Roundwise AI Interview Prep](https://github.com/Shivangiagarwal-sst/roundwise_ai_interview_prep)
 
 ---
 
 ## 📄 License
 
-This project is distributed under the license specified in the repository's `LICENSE` file.
+See the [`LICENSE`](./LICENSE) file in this repository for licensing details.
 
 ---
 
