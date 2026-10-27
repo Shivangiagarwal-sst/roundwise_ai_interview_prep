@@ -8,7 +8,9 @@ import { User } from '../models/User.js';
 
 export async function optionalAuth(req, res, next) {
   try {
-    const token = req.cookies?.token;
+    const authHeader = req.headers.authorization;
+    const bearerToken = authHeader && authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null;
+    const token = req.cookies?.token || bearerToken;
     if (!token) return next();
 
     const payload = jwt.verify(token, env.JWT_SECRET);

@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { api } from '../api/client.js';
+import { api, setAuthToken } from '../api/client.js';
 
 const AuthContext = createContext(null);
 
@@ -23,11 +23,15 @@ export function AuthProvider({ children }) {
         // Fetch current user
         const res = await api.get('/auth/me');
         if (res.success && mounted) {
+          if (res.token) setAuthToken(res.token);
           setUser(res.data);
         }
       } catch (err) {
         // Not authenticated
-        if (mounted) setUser(null);
+        if (mounted) {
+          setAuthToken(null);
+          setUser(null);
+        }
       } finally {
         if (mounted) setLoading(false);
       }
@@ -40,6 +44,7 @@ export function AuthProvider({ children }) {
   const login = async (email, password) => {
     const res = await api.post('/auth/login', { email, password });
     if (res.success) {
+      if (res.token) setAuthToken(res.token);
       setUser(res.data);
       return res.data;
     }
@@ -48,6 +53,7 @@ export function AuthProvider({ children }) {
   const register = async (name, email, password) => {
     const res = await api.post('/auth/register', { name, email, password });
     if (res.success) {
+      if (res.token) setAuthToken(res.token);
       setUser(res.data);
       return res.data;
     }
@@ -56,6 +62,7 @@ export function AuthProvider({ children }) {
   const demoLogin = async () => {
     const res = await api.post('/auth/demo');
     if (res.success) {
+      if (res.token) setAuthToken(res.token);
       setUser(res.data);
       return res.data;
     }
@@ -67,6 +74,7 @@ export function AuthProvider({ children }) {
     } catch {
       // ignore
     } finally {
+      setAuthToken(null);
       setUser(null);
     }
   };

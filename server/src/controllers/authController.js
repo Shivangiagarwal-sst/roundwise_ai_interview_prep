@@ -19,10 +19,11 @@ function issueToken(user, res) {
     expiresIn: JWT_EXPIRY,
   });
 
+  const isCrossSite = process.env.CROSS_SITE_COOKIES === 'true';
   res.cookie('token', token, {
     httpOnly: true,
-    secure: !isDev,
-    sameSite: 'lax',
+    secure: !isDev || isCrossSite,
+    sameSite: isCrossSite ? 'none' : 'lax',
     maxAge: COOKIE_MAX_AGE_MS,
     path: '/',
   });
@@ -51,9 +52,9 @@ export async function register(req, res, next) {
     const passwordHash = await bcrypt.hash(password, BCRYPT_ROUNDS);
     const user = await User.create({ name, email, passwordHash });
 
-    issueToken(user, res);
+    const token = issueToken(user, res);
     const sanitized = sanitizeUser(user);
-    res.status(201).json({ success: true, user: sanitized, data: sanitized });
+    res.status(201).json({ success: true, token, user: sanitized, data: sanitized });
   } catch (err) {
     next(err);
   }
@@ -73,9 +74,9 @@ export async function login(req, res, next) {
       return next(createError(401, 'Invalid email or password.', 'INVALID_CREDENTIALS'));
     }
 
-    issueToken(user, res);
+    const token = issueToken(user, res);
     const sanitized = sanitizeUser(user);
-    res.json({ success: true, user: sanitized, data: sanitized });
+    res.json({ success: true, token, user: sanitized, data: sanitized });
   } catch (err) {
     next(err);
   }
@@ -83,7 +84,13 @@ export async function login(req, res, next) {
 
 export async function logout(req, res, next) {
   try {
-    res.clearCookie('token', { httpOnly: true, sameSite: 'lax', path: '/' });
+    const isCrossSite = process.env.CROSS_SITE_COOKIES === 'true';
+    res.clearCookie('token', {
+      httpOnly: true,
+      secure: !isDev || isCrossSite,
+      sameSite: isCrossSite ? 'none' : 'lax',
+      path: '/',
+    });
     res.json({ success: true });
   } catch (err) {
     next(err);
@@ -110,9 +117,9 @@ export async function demoLogin(req, res, next) {
       return next(createError(404, 'Demo account not found. Run `npm run seed:demo` first.', 'DEMO_NOT_FOUND'));
     }
 
-    issueToken(user, res);
+    const token = issueToken(user, res);
     const sanitized = sanitizeUser(user);
-    res.json({ success: true, user: sanitized, data: sanitized });
+    res.json({ success: true, token, user: sanitized, data: sanitized });
   } catch (err) {
     next(err);
   }

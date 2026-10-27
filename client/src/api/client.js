@@ -13,18 +13,40 @@ class ApiError extends Error {
   }
 }
 
+const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+
+let authToken = typeof window !== 'undefined' ? localStorage.getItem('roundwise_token') : null;
+
+export function setAuthToken(token) {
+  authToken = token;
+  if (typeof window !== 'undefined') {
+    if (token) {
+      localStorage.setItem('roundwise_token', token);
+    } else {
+      localStorage.removeItem('roundwise_token');
+    }
+  }
+}
+
+export function getAuthToken() {
+  return authToken;
+}
+
 async function request(endpoint, options = {}) {
-  const url = endpoint.startsWith('http') ? endpoint : `/api${endpoint.startsWith('/') ? '' : '/'}${endpoint}`;
+  const url = endpoint.startsWith('http')
+    ? endpoint
+    : `${API_BASE}/api${endpoint.startsWith('/') ? '' : '/'}${endpoint}`;
 
   const headers = {
     'Content-Type': 'application/json',
+    ...(authToken ? { Authorization: `Bearer ${authToken}` } : {}),
     ...(options.headers || {}),
   };
 
   const config = {
     ...options,
     headers,
-    credentials: 'include', // Ensure cookies are sent
+    credentials: 'include', // Ensure cookies are sent when supported
   };
 
   if (config.body && typeof config.body === 'object' && !(config.body instanceof FormData)) {

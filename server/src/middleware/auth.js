@@ -13,7 +13,9 @@ import { createError } from './error.js';
  */
 export async function requireAuth(req, res, next) {
   try {
-    const token = req.cookies?.token;
+    const authHeader = req.headers.authorization;
+    const bearerToken = authHeader && authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null;
+    const token = req.cookies?.token || bearerToken;
     if (!token) {
       return next(createError(401, 'Authentication required', 'UNAUTHORIZED'));
     }
@@ -49,14 +51,14 @@ export function verifyOrigin(req, res, next) {
     return next();
   }
 
-  const origin = req.get('Origin');
+  const origin = req.get('Origin')?.replace(/\/$/, '');
   if (!origin) {
     // No origin header — allow (server-to-server or same-origin form POST)
     return next();
   }
 
   const allowedOrigins = getAllowedOrigins();
-  if (!allowedOrigins.includes(origin)) {
+  if (!allowedOrigins.includes(origin) && !allowedOrigins.includes('*')) {
     return next(createError(403, 'Origin not allowed', 'ORIGIN_FORBIDDEN'));
   }
 
@@ -68,7 +70,10 @@ export function verifyOrigin(req, res, next) {
  * In dev, localhost variants are always allowed.
  */
 export function getAllowedOrigins() {
-  const urls = env.CLIENT_URL.split(',').map((u) => u.trim()).filter(Boolean);
+  const urls = (env.CLIENT_URL || '')
+    .split(',')
+    .map((u) => u.trim().replace(/\/$/, ''))
+    .filter(Boolean);
 
   urls.push(`http://localhost:${env.PORT}`, `http://127.0.0.1:${env.PORT}`);
 

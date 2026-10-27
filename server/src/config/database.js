@@ -23,11 +23,17 @@ export async function connectDatabase() {
     logger.error({ err }, 'MongoDB connection error');
   });
 
-  await mongoose.connect(env.MONGODB_URI, {
-    serverSelectionTimeoutMS: 5000,
-  });
-
-  isConnected = true;
+  try {
+    await mongoose.connect(env.MONGODB_URI, {
+      serverSelectionTimeoutMS: 10000,
+    });
+    isConnected = true;
+  } catch (err) {
+    if (err.name === 'MongooseServerSelectionError') {
+      logger.error('Could not connect to MongoDB Atlas. Ensure "Allow Access from Anywhere" (0.0.0.0/0) is added in Atlas Network Access.');
+    }
+    throw err;
+  }
 }
 
 export function getDbStatus() {
